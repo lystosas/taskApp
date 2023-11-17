@@ -17,16 +17,16 @@
       <option value="2">Urgente</option>
     </select>
   </div>
-  <input type="submit" value="Enviar" />
+  <input type="submit" value="Enviar" class="btn btn-outline-primary btn-sm" />
 </form>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Titulo</th>
-      <th>Descripcion</th>
-      <th>Prioridad</th>
-      <th>Accion</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Prioridad</th>
+      <th scope="col">Accion</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +34,11 @@
       <td>{{ task.title | uppercase }}</td>
       <td>{{ task.description }}</td>
       <td>{{ task.priority }}</td>
-      <td><button (click)="onRemove(indice)">Tarea Terminada</button></td>
+      <td>
+        <button (click)="onRemove(indice)" class="btn btn-primary btn-sm">
+          Tarea Terminada
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
